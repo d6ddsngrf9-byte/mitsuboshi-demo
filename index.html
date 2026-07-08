@@ -1100,7 +1100,7 @@
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in');
       e.target.querySelectorAll('.use-bar span').forEach(function(s){s.style.width=s.dataset.w+'%';});
       io.unobserve(e.target);} });
-  },{threshold:.15});
+  },{threshold:0,rootMargin:'0px 0px -10% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
   /* toast */
