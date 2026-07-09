@@ -139,6 +139,8 @@
   .course button:hover{background:var(--blue);color:#fff;}
   .course button:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
   .tag-draft{display:inline-block;font-size:11px;color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:99px;padding:3px 10px;margin-top:14px;letter-spacing:.04em;}
+  .note-pill{display:inline-block;max-width:24em;font-size:12px;color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:18px;padding:12px 24px;letter-spacing:.04em;text-align:center;line-height:1.9;}
+  .note-pill::before{content:"✦";display:block;color:var(--gold);font-size:1.15em;line-height:1;margin-bottom:5px;}
 
   .person-num{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:22px 24px;}
   .num-badge{flex:none;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;}
@@ -353,7 +355,7 @@
 <section class="sec dawn">
   <div class="wrap reveal">
     <span class="eyebrow" data-i18n="founder-eyebrow">代表からのメッセージ</span>
-    <h2 data-i18n="founder-h2">構想から14年、ひとつの場所。</h2>
+    <h2 data-i18n="founder-h2">構想から14年、<br class="br-sp">ひとつの場所。</h2>
     <p class="lead-p" data-i18n="founder-p1">ShiroiToの前身は、地域で17年続けた子どもから大人までの造形アトリエでした。その中には、生きづらさを感じながら自宅に引きこもりがちな人たちもいました。「この先、どうしたらよいのか分からない。」家族からそんな悩みを聞いたとき、雷が落ちたような感覚がありました。</p>
     <p class="lead-p muted" style="margin-top:1.2em;" data-i18n="founder-p2">「いつか、通ってくれている障がいのある子たちが成人するころに、彼らの役に立つ場をつくりたい。」そう構想してから14年。2022年5月、大阪府の認可を受けて、アトリエShiroiToをオープンしました。</p>
     <p style="margin-top:1.4em;font-weight:700;color:var(--blue-deep);font-size:14.5px;" data-i18n="founder-sign">— 代表理事　小原 緑</p>
@@ -653,7 +655,7 @@
     <span class="eyebrow" data-i18n="venues-eyebrow">まちの協力者</span>
     <h2 data-i18n="venues-h2">展示する場をご提供くださる皆さま</h2>
     <p class="lead-p muted" style="max-width:none;" data-i18n="venues-p">展示会場は星田駅前ロータリーや、地元の商店・商業施設、星田会館、民家など、まちの複数の場所が展示の舞台になります。</p>
-    <p class="lead-p" style="margin-top:8px;"><span class="tag-draft" style="margin-top:0;" data-i18n="venues-count">第1回から続く、まちの協力の輪。<br class="br-sp">今回も少しずつ広がっています。</span></p>
+    <p class="lead-p" style="margin-top:14px;text-align:center;"><span class="note-pill" data-i18n="venues-count">第1回から続く、まちの協力の輪。<br class="br-sp">今回も少しずつ広がっています。</span></p>
 
     <h3 data-i18n="shops-h3" style="margin:46px 0 0;font-size:17px;">協力店舗</h3>
 <div class="shops-grid">
@@ -736,7 +738,7 @@
 <section class="sec sky final">
   <div class="wrap reveal">
     <span class="eyebrow dark" data-i18n="final-eyebrow">いっしょに</span>
-    <h2 data-i18n="final-h2">三つ目の星は、あなたです。</h2>
+    <h2 data-i18n="final-h2">三つ目の星は、<br class="br-sp">あなたです。</h2>
     <p class="lead-p" style="margin:0 auto 6px;" data-i18n="final-p">このまちにアートを灯す、ひとつの光になってください。</p>
     <button class="cta" data-demo data-i18n="cta-main">このプロジェクトを支援する</button>
   </div>
