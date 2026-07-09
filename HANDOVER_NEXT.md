@@ -10,11 +10,15 @@
 - 本番: https://mitsuboshi-demo.vercel.app （確認は `?数字` 付きURL か再読込。Cache-Control設定済みで再検証される）。
 - 現状: 作業ツリー クリーン、local=remote=本番=`7fc7df2`。
 
-## ★未完了・次にやること（ユーザー指示・最優先）
-1. **ゲージの星がPCとスマホで違う→揃える。** 原因は進捗バーのマーカーが**文字グリフ `✦`（U+2726）で端末により描画が変わる**こと。対策は **`✦`→インラインSVGの4点スターに置換**（端末非依存で同一形状に）。着手途中でrevert済み。手順:
-   - マークアップ `<span class="marker" id="marker">✦</span>`（ヒーローの `.track` 内）を SVG入りに。
-   - `.marker` CSS: `font-size`/`color`/`calc(-50% - 3.2px)` をやめ `transform:translate(-50%,-50%)` ＋ `.marker svg{display:block;fill:var(--gold);}`。JS(`marker.style.left=pct%`)はそのまま動く。SVGサイズは~26pxで実機に合わせ微調整。
-2. **その他 PC/SP のおかしな差を点検して直す**（※改行など個別指摘済みのものは除く）。`✦`グリフは他所（eyebrow前・三つの星・note-pill・trust等）でも使用→端末差が気になれば同様にSVG化を検討。PC/スマホ両幅で流し見して不自然な差を潰す。
+## ✅ 完了（2026-07-09）
+- **ゲージの星をSVG化＝PC/スマホで同一形状に。** マーカー `#marker` の `✦`（U+2726）→インラインSVGの4点スター（`viewBox 0 0 26 26`, 26px, `fill:var(--gold)`）。`.marker` CSSは `transform:translate(-50%,-50%)` ＋ `.marker svg{display:block;width/height:26px;}` に変更。JS(`marker.style.left=pct%`)はそのまま。形はMacの `✦` に近い"中間"の太さ（Qカーブ版）でユーザーOK確定。
+
+## ★次にやること（優先度順）
+1. **残りの `✦` グリフのSVG化（任意・保留中）。** ゲージ以外にも `✦` が残る＝同じく端末差が出る。ユーザーが気にすれば一括でSVG化（上のゲージと同じパスを流用可）。該当箇所:
+   - CSS `content:"✦"`: `.eyebrow::before`(62)/`.note-pill::before`(143)/`.trust li::before`(171)/`.pay-trust p::before`(211)
+   - 本文グリフ: `.star-glyph`「三つの星」カード×3(372-374)
+   - ※course-thumb等のSVG内 `<text>✦` は既にSVGだが中身は文字グリフ→端末差の懸念あれば併せて置換。
+2. **その他 PC/SP のおかしな差を点検して直す**（※改行など個別指摘済みのものは除く）。PC/スマホ両幅で流し見して不自然な差を潰す。
 
 ## 判断待ち→ほぼ解決済み（記録）
 - 応援団(3k/5k/10k/30k)=順位づけない統一表現に（「大口」削除）済み。
