@@ -81,8 +81,9 @@
   .track{position:relative;height:8px;border-radius:99px;background:#E1ECF1;margin:20px 0 6px;overflow:visible;}
   .fill{position:absolute;inset:0;width:0;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));
     box-shadow:0 0 14px rgba(224,169,58,.5);transition:width 1.6s cubic-bezier(.22,1,.36,1);}
-  .marker{position:absolute;top:50%;left:0;transform:translate(-50%,calc(-50% - 3.2px));color:var(--gold);font-size:38px;
+  .marker{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:26px;height:26px;line-height:0;
     filter:drop-shadow(0 0 10px rgba(242,199,91,.95));transition:left 1.6s cubic-bezier(.22,1,.36,1);}
+  .marker svg{display:block;width:26px;height:26px;fill:var(--gold);}
   .stats{display:flex;gap:26px;margin-top:18px;flex-wrap:wrap;}
   .stat .n{font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-size:26px;font-weight:700;color:var(--blue-deep);line-height:1;}
   .stat .l{font-size:11.5px;color:var(--muted);letter-spacing:.08em;margin-top:5px;}
@@ -324,7 +325,7 @@
       <div class="panel" aria-label="支援状況（サンプル）">
         <div class="amount">446,000<span class="yen" data-i18n="yen-label">円</span></div>
         <div class="goalrow" data-i18n="goalrow">目標 <b>800,000円</b>　達成率 <b>56%</b></div>
-        <div class="track"><div class="fill" id="fill"></div><span class="marker" id="marker">✦</span></div>
+        <div class="track"><div class="fill" id="fill"></div><span class="marker" id="marker"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></span></div>
         <div class="stats">
           <div class="stat"><div class="n">62</div><div class="l" data-i18n="stat-supporters">人の支援</div></div>
           <div class="stat"><div class="n">24</div><div class="l" data-i18n="stat-daysleft">日のこり</div></div>
