@@ -103,6 +103,8 @@
   .lead-p{font-size:clamp(15px,2vw,17.5px);max-width:34em;color:var(--ink);line-break:strict;overflow-wrap:break-word;}
   .sec.sky .lead-p{color:rgba(255,255,255,.92);max-width:none;}
   .muted{color:var(--muted);} .sec.sky .muted{color:rgba(255,255,255,.8);}
+  /* リード段落は1段落目も2段落目も同じ色（インク）に統一。muted指定より優先。sky背景は白のまま */
+  .lead-p.muted{color:var(--ink);}
 
   .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:46px;}
   .star-card{text-align:center;position:relative;}
