@@ -269,6 +269,8 @@
   .artist-ig:hover{color:#DD2A7B;} .artist-ig svg{display:block;}
   .artist-works{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:14px;}
   .artist-works img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--hair);display:block;background:#fff;}
+  .artist-works.works-tbd{display:block;background:var(--blue-soft);border:1px dashed #B8CEDA;border-radius:12px;padding:22px;text-align:center;}
+  .artist-works.works-tbd p{margin:0;color:var(--muted);font-size:13px;letter-spacing:.02em;}
 
   /* cooperating shops */
   .shops-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px 14px;margin-top:22px;}
@@ -287,6 +289,9 @@
     .pay-row{flex-wrap:wrap;gap:10px;}
     .pay-row .pay-desc{width:100%;}
     .hero-logo{height:140px;}
+    /* 単語の途中で改行しないよう、サイズ・字間を詰める（星田/支援する等の割れ対策） */
+    .eyebrow{letter-spacing:.1em;word-break:keep-all;}
+    .cta{font-size:14.5px;letter-spacing:.01em;padding:15px 20px;}
   }
   @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;}.reveal{opacity:1;transform:none;}}
 </style>
@@ -523,6 +528,10 @@
       <div class="artist">
         <h3><span data-i18n="a2-name">ウラタスパンコール</span><small>Urata Spancall</small><a class="artist-ig" href="https://www.instagram.com/urataspancall/" target="_blank" rel="noopener" aria-label="ウラタスパンコール のInstagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></h3>
         <div class="artist-works"><img src="images/urata-1.jpg" alt="ウラタスパンコール 作品" loading="lazy"><img src="images/urata-2.jpg" alt="ウラタスパンコール 作品" loading="lazy"><img src="images/urata-3.jpg" alt="ウラタスパンコール 作品" loading="lazy"></div>
+      </div>
+      <div class="artist">
+        <h3><span data-i18n="a7-name">オカジマ・ヨシコ</span><small>OKAJIMA YOSHIKO</small><a class="artist-ig" href="https://www.instagram.com/yoshikookazima/" target="_blank" rel="noopener" aria-label="オカジマ・ヨシコ のInstagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></h3>
+        <div class="artist-works works-tbd"><p data-i18n="a7-tbd">作品写真は準備中です</p></div>
       </div>
       <div class="artist">
         <h3><span data-i18n="a3-name">沖明日香</span><small>OKI ASUKA</small><a class="artist-ig" href="https://www.instagram.com/asukaoki.project/" target="_blank" rel="noopener" aria-label="沖明日香 のInstagram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></h3>
@@ -882,6 +891,8 @@
     'a4-name': { ja: '中谷大知', en: 'Daichi Nakatani' },
     'a5-name': { ja: '廣田くみこ', en: 'Kumiko Hirota' },
     'a6-name': { ja: 'ふるやみか', en: 'Mika Furuya' },
+    'a7-name': { ja: 'オカジマ・ヨシコ', en: 'Yoshiko Okajima' },
+    'a7-tbd': { ja: '作品写真は準備中です', en: 'Artwork photos coming soon' },
     'shops-h3': { ja: '協力店舗', en: 'Cooperating Shops' },
     'shops-note': { ja: '※前回「みつぼしART星田2024」にご協力いただいた店舗のみなさんです（敬称略）。2026年版は確定し次第更新します。', en: '* Shops that supported Mitsuboshi ART Hoshida 2024. The 2026 list will be updated as it is confirmed.' },
 
