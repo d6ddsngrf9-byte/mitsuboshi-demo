@@ -331,7 +331,7 @@
         <div class="track"><div class="fill" id="fill"></div><span class="marker" id="marker"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></span></div>
         <div class="stats">
           <div class="stat"><div class="n">0</div><div class="l" data-i18n="stat-supporters">人の支援</div></div>
-          <div class="stat"><div class="n">24</div><div class="l" data-i18n="stat-daysleft">日のこり</div></div>
+          <div class="stat"><div class="n" id="daysleft">24</div><div class="l" data-i18n="stat-daysleft">日のこり</div></div>
           <div class="stat"><div class="n">All-in</div><div class="l" data-i18n="stat-allin-label">方式</div></div>
         </div>
         <button class="cta" data-demo data-i18n="cta-main">このプロジェクトを支援する</button>
@@ -1116,6 +1116,7 @@
 
   /* progress */
   var pct=0;
+  (function(){var dl=document.getElementById('daysleft');if(dl){var end=new Date('2026-10-31T23:59:59+09:00');var d=Math.max(0,Math.ceil((end-Date.now())/86400000));dl.textContent=d;}})();
   setTimeout(function(){
     var fill=document.getElementById('fill'), marker=document.getElementById('marker');
     if(fill) fill.style.width=pct+'%';
