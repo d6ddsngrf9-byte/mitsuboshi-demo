@@ -1,3 +1,17 @@
+# ⚠️ 2026-07-11 統合済み — まずここを読む
+
+**7/9〜7/10にmini線とAir線がフォークし、本番を相互上書きしていた**（Air側がminiの7/9改善を知らずに7/8ベースで再構築→上書き）。7/11未明にAir側で両線を統合し、本ツリーが唯一の正。
+
+## 統合後の状態（= 本番）
+- **構成変更**: `crowdfunding/index.html` + `crowdfunding/images/`（独自ドメイン **atelier-shiroito.art** を本体サイトの正ドメインとし、クラファンは /crowdfunding/ 配下。本体完成までルート→/crowdfunding/ の307リダイレクト。vercel.json参照）
+- mini線から継承: SVGゲージ星／reveal threshold:0+rootMargin修正／一人ひとり統一／応援団表記／フッター修正／_srcJA i18n／オカジマ・ヨシコ（7名）／br-sp
+- Air線から統合: hero冒頭句削除（「障がいのある人もない人も、」除去）／助成段落の全面改稿（「この芸術祭の実現には…助成だけではまかないきれません」※前田さん事実確認済み）／支払い3文の補足／.muted→ink（本文段落を濃く）／revealへのIOガード＋noscript保険（rootMargin等はmini値を維持）／全画像を表示サイズ再圧縮＋プログレッシブJPEG（5.3→2.3MB）
+- **運用ルール（フォーク再発防止）**: 作業開始前に必ず `git pull`。2台同時にCodeを走らせない。編集後は `git add -A && git commit && git push && vercel deploy --prod --yes`（deploy はリポジトリルートから）
+- 未解決: レジストラ（ムームー）のネームサーバー切替（ns1/ns2.vercel-dns.com）がムームー側サーバー不調で未完了。dig +short NS atelier-shiroito.art で muumuu のままなら再実行が必要
+- 注意: 「なぜやるのか」why-p1 はmini推敲版を採用（Airで前田さんが指定した版と微差あり。要ならAir版に差し替え）
+
+---
+
 # 引き継ぎ（現状トップ）みつぼしART星田 クラファンLP — 2026-07-09
 
 ※これは「今の続き」用の最新メモ。制作全体の背景・詳細は `HANDOVER_みつぼしART星田_クラファンLP.md` を参照（そちらのフッター問題は解決済み・下記に現状を反映）。
