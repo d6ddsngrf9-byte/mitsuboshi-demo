@@ -326,11 +326,11 @@
         <p class="place" data-i18n="hero-place">主催：一般社団法人 星十色／アトリエShiroiTo｜会場：交野市星田エリア一帯</p>
       </div>
       <div class="panel" aria-label="支援状況（サンプル）">
-        <div class="amount">446,000<span class="yen" data-i18n="yen-label">円</span></div>
-        <div class="goalrow" data-i18n="goalrow">目標 <b>800,000円</b>　達成率 <b>56%</b></div>
+        <div class="amount">0<span class="yen" data-i18n="yen-label">円</span></div>
+        <div class="goalrow" data-i18n="goalrow">目標 <b>1,000,000円</b>　達成率 <b>0%</b></div>
         <div class="track"><div class="fill" id="fill"></div><span class="marker" id="marker"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></span></div>
         <div class="stats">
-          <div class="stat"><div class="n">62</div><div class="l" data-i18n="stat-supporters">人の支援</div></div>
+          <div class="stat"><div class="n">0</div><div class="l" data-i18n="stat-supporters">人の支援</div></div>
           <div class="stat"><div class="n">24</div><div class="l" data-i18n="stat-daysleft">日のこり</div></div>
           <div class="stat"><div class="n">All-in</div><div class="l" data-i18n="stat-allin-label">方式</div></div>
         </div>
@@ -807,7 +807,7 @@
     'hero-place': { ja: '主催：一般社団法人 星十色／アトリエShiroiTo｜会場：交野市星田エリア一帯', en: 'Organized by: Hoshi Toiro Association / Atelier ShiroiTo｜Venue: Hoshida area, Katano City' },
     'yen-label': { ja: '円', en: 'JPY' },
     'yen-label2': { ja: '円', en: 'JPY' },
-    'goalrow': { ja: '目標 <b>800,000円</b>　達成率 <b>56%</b>', en: 'Goal <b>¥800,000</b>　56% funded' },
+    'goalrow': { ja: '目標 <b>1,000,000円</b>　達成率 <b>0%</b>', en: 'Goal <b>¥1,000,000</b>　0% funded' },
     'stat-supporters': { ja: '人の支援', en: 'supporters' },
     'stat-daysleft': { ja: '日のこり', en: 'days left' },
     'stat-allin-label': { ja: '方式', en: 'funding' },
@@ -1115,7 +1115,7 @@
   }
 
   /* progress */
-  var pct=56;
+  var pct=0;
   setTimeout(function(){
     var fill=document.getElementById('fill'), marker=document.getElementById('marker');
     if(fill) fill.style.width=pct+'%';
