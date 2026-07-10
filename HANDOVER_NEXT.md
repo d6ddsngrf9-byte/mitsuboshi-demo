@@ -7,7 +7,7 @@
 - mini線から継承: SVGゲージ星／reveal threshold:0+rootMargin修正／一人ひとり統一／応援団表記／フッター修正／_srcJA i18n／オカジマ・ヨシコ（7名）／br-sp
 - Air線から統合: hero冒頭句削除（「障がいのある人もない人も、」除去）／助成段落の全面改稿（「この芸術祭の実現には…助成だけではまかないきれません」※前田さん事実確認済み）／支払い3文の補足／.muted→ink（本文段落を濃く）／revealへのIOガード＋noscript保険（rootMargin等はmini値を維持）／全画像を表示サイズ再圧縮＋プログレッシブJPEG（5.3→2.3MB）
 - **運用ルール（フォーク再発防止）**: 作業開始前に必ず `git pull`。2台同時にCodeを走らせない。編集後は `git add -A && git commit && git push && vercel deploy --prod --yes`（deploy はリポジトリルートから）
-- 未解決: レジストラ（ムームー）のネームサーバー切替（ns1/ns2.vercel-dns.com）がムームー側サーバー不調で未完了。dig +short NS atelier-shiroito.art で muumuu のままなら再実行が必要
+- ✅解決(2026-07-11): ムームーのNSを ns1/ns2.vercel-dns.com に切替完了。`atelier-shiroito.art` は 307→/crowdfunding/→200、SSL(Let's Encrypt)自動発行済み。dig/Google DNS/openssl で確認済み。✅`www.atelier-shiroito.art` もVercelに追加済み・SSL発行済み(307→/crowdfunding/→200)。※現状 apex と www は各自で /crowdfunding/ に307＝別URL。SEO段階で www→apex 正規化 or canonical を入れる（軽微・保留）
 - 注意: 「なぜやるのか」why-p1 はmini推敲版を採用（Airで前田さんが指定した版と微差あり。要ならAir版に差し替え）
 
 ---
