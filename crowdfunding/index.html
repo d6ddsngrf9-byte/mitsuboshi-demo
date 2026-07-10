@@ -59,7 +59,8 @@
 
   .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
     color:var(--gold-deep);display:inline-flex;gap:.6em;align-items:center;}
-  .eyebrow::before{content:"✦";color:var(--gold);font-size:.9em;}
+  :root{--star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z'/%3E%3C/svg%3E");}
+  .eyebrow::before{content:"";width:.82em;height:.82em;flex:0 0 auto;background-color:var(--gold);-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;}
   .eyebrow.dark{color:var(--gold-bright);}
 
   .hero{position:relative;overflow:hidden;
@@ -111,7 +112,8 @@
 
   .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:46px;}
   .star-card{text-align:center;position:relative;}
-  .star-glyph{font-size:34px;color:var(--gold-bright);filter:drop-shadow(0 0 12px rgba(242,199,91,.5));}
+  .star-glyph{line-height:0;filter:drop-shadow(0 0 12px rgba(242,199,91,.5));}
+  .star-glyph svg{width:34px;height:34px;fill:var(--gold-bright);display:inline-block;}
   .star-card h3{font-size:22px;font-weight:700;margin:.5em 0 .3em;color:#fff;}
   .star-card p{font-size:14px;color:rgba(255,255,255,.82);margin:0 auto;max-width:16em;}
   .triad-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);margin:34px auto 0;max-width:560px;opacity:.7;}
@@ -141,7 +143,7 @@
   .course button:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
   .tag-draft{display:inline-block;font-size:11px;color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:99px;padding:3px 10px;margin-top:14px;letter-spacing:.04em;}
   .note-pill{display:inline-block;max-width:none;font-size:14px;color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:18px;padding:14px 32px;letter-spacing:.04em;text-align:center;line-height:1.9;}
-  .note-pill::before{content:"✦";display:block;color:var(--gold);font-size:1.15em;line-height:1;margin-bottom:5px;}
+  .note-pill::before{content:"";display:block;width:14px;height:14px;margin:0 auto 6px;background-color:var(--gold);-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;}
 
   .person-num{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--hair);border-radius:16px;padding:22px 24px;}
   .num-badge{flex:none;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;}
@@ -169,7 +171,7 @@
   .trust{margin:34px 0 0;display:grid;gap:14px;padding-left:20px;}
   .trust li{list-style:none;display:block;position:relative;padding-left:1.6em;
     font-size:14.5px;color:var(--ink);line-height:1.85;}
-  .trust li::before{content:"✦";color:var(--gold);position:absolute;left:0;top:.38em;line-height:1;}
+  .trust li::before{content:"";position:absolute;left:0;top:.5em;width:.85em;height:.85em;background-color:var(--gold);-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;}
   .trust b{color:var(--blue-deep);}
   .sec.sky .trust li{color:var(--ink);}
 
@@ -209,7 +211,7 @@
   .pay-text strong{font-size:16px;font-weight:700;color:var(--ink);}
   .pay-text span{font-size:13.5px;color:var(--muted);}
   .pay-trust p{margin:0;font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.7;}
-  .pay-trust p::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:.8em;top:3px;}
+  .pay-trust p::before{content:"";position:absolute;left:0;top:5px;width:.8em;height:.8em;background-color:var(--gold);-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;}
   .pay-trust b{color:var(--blue-deep);}
 
   .tier-label{margin:40px 0 14px;}
@@ -371,9 +373,9 @@
     <span class="eyebrow dark" data-i18n="triad-eyebrow">みつぼしの意味</span>
     <h2 data-i18n="triad-h2">三つの星が、出会う。</h2>
     <div class="triad">
-      <div class="star-card"><div class="star-glyph">✦</div><h3 data-i18n="star1-h3">生まれ育った人</h3><p data-i18n="star1-p">星田で生まれ育ち、暮らしてきた人。</p></div>
-      <div class="star-card"><div class="star-glyph">✦</div><h3 data-i18n="star2-h3">移り住んだ人・つくる人</h3><p data-i18n="star2-p">星田に移り住んだ人や、この場所で制作する作家たち。</p></div>
-      <div class="star-card"><div class="star-glyph">✦</div><h3 data-i18n="star3-h3">観に来てくれる人</h3><p data-i18n="star3-p">展覧会に足を運んでくれる、すべての人。</p></div>
+      <div class="star-card"><div class="star-glyph"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></div><h3 data-i18n="star1-h3">生まれ育った人</h3><p data-i18n="star1-p">星田で生まれ育ち、暮らしてきた人。</p></div>
+      <div class="star-card"><div class="star-glyph"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></div><h3 data-i18n="star2-h3">移り住んだ人・つくる人</h3><p data-i18n="star2-p">星田に移り住んだ人や、この場所で制作する作家たち。</p></div>
+      <div class="star-card"><div class="star-glyph"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></div><h3 data-i18n="star3-h3">観に来てくれる人</h3><p data-i18n="star3-p">展覧会に足を運んでくれる、すべての人。</p></div>
     </div>
     <div class="triad-line"></div>
     <p class="triad-note" data-i18n="triad-note">降星伝説が残る星田に、三つの星が出会い、ひとつの銀河になる。それぞれの“みつぼし”が重なり合う芸術祭です。</p>
