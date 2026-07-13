@@ -1,4 +1,5 @@
 # 2026-07-13 更新
+- **回遊マップカード**: 背景に実際のGoogleマップ埋め込み（星田駅 34.7675,135.6639 中心・z16・`output=embed`のキー不要方式）。iframeはCSSフィルターで青トーン化＋`.map-scrim`ラジアル＋`.map-inner`テキストシャドウ。**装飾用**（pointer-events:none・lazy・aria-hidden）なのでカード上のスクロール/CTAは従来通り。トーン調整はフィルターとスクリムのrgba値で（スクリム合計が濃すぎると地図が消える。中心.56/縁.33が現値）。
 - **協力店グリッド**: 削除5（司法書士大侑/星田ネオ書房/甜甜/セカンドたなかや/飯田寝装店）・追加7（ShiroiTo SOCO/牧野さん家/BOさん(自転車修理)/チッタさん(カフェバー)/はなまる介護星田/ほっこりアットホーム/星田会館）。追加7件は**写真未手配→白タイル＋金星のテキストプレースホルダー**（`.shops-grid .ph`）。写真が届いたら `<div class="ph">…</div>` を `<img src="images/shops/xxx.jpg">` に差し替えるだけ。並びは五十音順。注記も「2026年版は確定し次第、順次更新」に変更（EN辞書も更新済み）。グリッドに `id="shopsgrid"` 追加。
 - **OGP**: og:/twitter: メタタグ一式を`<head>`に追加。シェア画像 `crowdfunding/images/ogp.png`（1200×630, 89KB。A1明朝タグライン＋ロゴ＋会期＋主催。生成元は headless Chrome、ソースHTMLは scratchpad のため再生成時は要再作成）。og:url=https://atelier-shiroito.art/crowdfunding/。※`<title>`はまだ「（デモ）」付き・DEMOリボンも残存 → 公開直前に外す判断待ち。
 
