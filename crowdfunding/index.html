@@ -177,7 +177,10 @@
   .info-list li{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--hair-blue);font-size:15px;}
   .info-list .k{width:6em;flex:none;color:rgba(255,255,255,.78);font-size:13px;letter-spacing:.06em;padding-top:2px;}
   .info-list .v{color:#fff;}
-  .map-teaser{border:1px dashed var(--hair-blue);border-radius:18px;padding:36px 28px;text-align:center;color:rgba(255,255,255,.85);}
+  .map-teaser{border:1px dashed var(--hair-blue);border-radius:18px;padding:36px 28px;text-align:center;color:rgba(255,255,255,.85);position:relative;overflow:hidden;}
+  .map-teaser .map-bg{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;filter:grayscale(1) brightness(.62) sepia(1) hue-rotate(158deg) saturate(2.8) contrast(1.05);}
+  .map-teaser .map-scrim{position:absolute;inset:0;background:radial-gradient(ellipse 75% 130% at 50% 50%, rgba(31,104,133,.56), rgba(63,147,184,.33) 80%);}
+  .map-teaser .map-inner{position:relative;text-shadow:0 1px 16px rgba(31,104,133,.75),0 0 3px rgba(31,104,133,.45);}
   .map-teaser .big{font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-size:22px;color:var(--gold-bright);margin-bottom:8px;}
 
   .pay-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:40px;}
@@ -668,7 +671,7 @@
         <li><span class="k" data-i18n="info-k3">入場</span><span class="v" data-i18n="info-v3">無料（一部プログラムを除く）</span></li>
         <li><span class="k" data-i18n="info-k4">主催</span><span class="v" data-i18n="info-v4">一般社団法人 星十色／アトリエShiroiTo</span></li>
       </ul>
-      <div class="map-teaser"><div class="big" data-i18n="map-big">回遊マップ、公開中。</div><p data-i18n="map-p">まちに点在する会場を、歩きながらめぐれる地図です。<br>星を辿るように、まちを発見してください。</p><a class="share-btn" style="margin-top:18px;text-decoration:none;background:var(--gold);color:var(--ink);" href="https://maps.app.goo.gl/g8bmW2MnAUDKeCTv8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="map-cta">Googleマップで開く</span></a></div>
+      <div class="map-teaser"><iframe class="map-bg" src="https://www.google.com/maps?q=34.7675,135.6639&amp;z=16&amp;output=embed&amp;hl=ja" loading="lazy" tabindex="-1" aria-hidden="true" title="星田エリアの地図"></iframe><div class="map-scrim" aria-hidden="true"></div><div class="map-inner"><div class="big" data-i18n="map-big">回遊マップ、公開中。</div><p data-i18n="map-p">まちに点在する会場を、歩きながらめぐれる地図です。<br>星を辿るように、まちを発見してください。</p><a class="share-btn" style="margin-top:18px;text-decoration:none;background:var(--gold);color:var(--ink);" href="https://maps.app.goo.gl/g8bmW2MnAUDKeCTv8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="map-cta">Googleマップで開く</span></a></div></div>
     </div>
   </div>
 </section>
