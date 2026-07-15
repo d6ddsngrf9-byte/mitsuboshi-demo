@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>みつぼしART星田2026｜クラウドファンディング（デモ）</title>
+<title>みつぼしART星田2026｜クラウドファンディング</title>
 <meta name="description" content="みんなの星で、銀河をつくる。降星伝説が残るまち・大阪府交野市 星田を舞台に、一人ひとりの“星”が集まり銀河になる芸術祭。会期：2026年11月14日(土)〜11月29日(日)。クラウドファンディングでの応援をお願いします。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://atelier-shiroito.art/crowdfunding/" />
@@ -333,7 +333,7 @@
 <body>
 
 <div class="ribbon">
-  <span data-i18n="ribbon"><b>DEMO</b>　アトリエShiroiToさま確認用のサンプルです。金額・支援者数・コース内容・日程はすべて<span class="hl">仮置き</span>です。</span>
+  <span data-i18n="ribbon"><b>みつぼしART星田2026</b>　クラウドファンディング挑戦中。会期：<span class="hl">2026年11月14日（土）—11月29日（日）</span></span>
   <button class="lang-toggle" id="langToggle" type="button">EN</button>
 </div>
 
@@ -349,7 +349,7 @@
         <p class="lead" data-i18n="hero-lead">つくる人も観る人も。降星伝説が残るまち・星田で、一人ひとりの“星”が集まり銀河になる——アトリエShiroiTo、3回目の芸術祭です。</p>
         <p class="place" data-i18n="hero-place">主催：一般社団法人 星十色／アトリエShiroiTo｜会場：交野市星田エリア一帯</p>
       </div>
-      <div class="panel" aria-label="支援状況（サンプル）">
+      <div class="panel" aria-label="支援状況">
         <div class="amount"><span id="raisedAmount">0</span><span class="yen" data-i18n="yen-label">円</span></div>
         <div class="goalrow" data-i18n="goalrow">目標 <b>1,000,000円</b>　達成率 <b>0%</b></div>
         <div class="track"><div class="fill" id="fill"></div><span class="marker" id="marker"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 0 Q15.5 10.5 26 13 Q15.5 15.5 13 26 Q10.5 15.5 0 13 Q10.5 10.5 13 0 Z"/></svg></span></div>
@@ -364,7 +364,6 @@
           <span class="pay" data-i18n="pay-konbini">コンビニ決済</span>
           <span class="pay" data-i18n="pay-bank">銀行振込</span>
         </div>
-        <p class="demonote" data-i18n="demonote">※デモのため、ボタンを押しても決済には進みません</p>
       </div>
     </div>
   </div>
@@ -814,7 +813,6 @@
         </div>
       </div>
     </div>
-    <p class="foot-note" data-i18n="foot-note">これはアトリエShiroiToさまへの提案用デモページです。掲載中の金額・支援者数・コース内容・日程・事業者情報はすべて仮置きであり、実際の募集内容ではありません。決済機能（Stripe）は本番構築時に実装します。</p>
   </div>
 </footer>
 
@@ -826,7 +824,7 @@
   var currentLang = 'ja';
 
   var I18N = {
-    'ribbon': { ja: '<b>DEMO</b>　アトリエShiroiToさま確認用のサンプルです。金額・支援者数・コース内容・日程はすべて<span class="hl">仮置き</span>です。', en: '<b>DEMO</b> Sample page for Atelier ShiroiTo to review. All amounts, supporter counts, course details, and dates are <span class="hl">placeholders</span>.' },
+    'ribbon': { ja: '<b>みつぼしART星田2026</b>　クラウドファンディング挑戦中。会期：<span class="hl">2026年11月14日（土）—11月29日（日）</span>', en: '<b>Mitsuboshi ART Hoshida 2026</b>　Crowdfunding is live. Event dates: <span class="hl">Nov 14\u201329, 2026</span>' },
     'hero-eyebrow': { ja: '大阪・交野市星田　／　第3回 みつぼしART星田2026', en: 'Hoshida, Katano City, Osaka／3rd Edition: Mitsuboshi ART Hoshida 2026' },
     'hero-h1': { ja: 'みんなの星で、<br>銀河をつくる。', en: 'Building a galaxy,<br>one star at a time.' },
     'hero-lead': { ja: 'つくる人も観る人も。降星伝説が残るまち・星田で、一人ひとりの“星”が集まり銀河になる——アトリエShiroiTo、3回目の芸術祭です。', en: 'Makers and viewers alike. In Hoshida, a town said to have stars fall from the sky, each person\u2019s "star" gathers into a galaxy \u2014 the third edition of Atelier ShiroiTo\u2019s art festival.' },
@@ -842,7 +840,6 @@
     'pay-card': { ja: 'クレジットカード', en: 'Credit Card' },
     'pay-konbini': { ja: 'コンビニ決済', en: 'Convenience Store' },
     'pay-bank': { ja: '銀行振込', en: 'Bank Transfer' },
-    'demonote': { ja: '※デモのため、ボタンを押しても決済には進みません', en: 'This is a demo. Buttons will not proceed to actual payment.' },
 
     'why-eyebrow': { ja: 'なぜやるのか', en: 'Why we do this' },
     'why-h2': { ja: 'まず、ひとつの<br>“作品”に出会うことから。', en: 'It begins with<br>meeting a single work of art.' },
@@ -999,7 +996,6 @@
     'dd6': { ja: '商品の性質上、原則不可（All-in方式）', en: 'Not generally available due to the nature of this project (All-in model)' },
     'footer-h4-2': { ja: 'みつぼしART星田2026', en: 'Mitsuboshi ART Hoshida 2026' },
     'footer-p2': { ja: '主催：一般社団法人 星十色／アトリエShiroiTo<br>アートディレクション：taido.design（前田敏幸）<br>会場：大阪府交野市 星田エリア一帯', en: 'Organized by: Hoshi Toiro Association / Atelier ShiroiTo<br>Art Direction: <a class="tlink" href="https://taido.design/" target="_blank" rel="noopener">taido.design</a> (Toshiyuki Maeda)<br>Venue: Hoshida area, Katano City, Osaka' },
-    'foot-note': { ja: 'これはアトリエShiroiToさまへの提案用デモページです。掲載中の金額・支援者数・コース内容・日程・事業者情報はすべて仮置きであり、実際の募集内容ではありません。決済機能（Stripe）は本番構築時に実装します。', en: 'This is a proposal demo page for Atelier ShiroiTo. All amounts, supporter counts, course details, dates, and business information shown are placeholders and do not represent the actual campaign. Payment functionality (Stripe) will be implemented at production build.' },
 
     'voices-eyebrow': { ja: 'メンバーの声', en: 'Voices from the Atelier' },
     'voices-h2': { ja: 'つくる人たちの言葉。', en: 'Words from those who create.' },
