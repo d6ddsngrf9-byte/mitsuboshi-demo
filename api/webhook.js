@@ -18,12 +18,12 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
   const sig = req.headers['stripe-signature'];
   const rawBody = await readRawBody(req);
 
   let event;
   try {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
     event = stripe.webhooks.constructEvent(rawBody, sig, process.env.STRIPE_WEBHOOK_SECRET);
   } catch (err) {
     console.error('webhook signature verification failed:', err.message);

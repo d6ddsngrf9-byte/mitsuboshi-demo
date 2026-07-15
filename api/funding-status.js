@@ -4,12 +4,11 @@ const Stripe = require('stripe');
 const GOAL = 1000000;
 
 module.exports = async (req, res) => {
-  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-
   let totalAmount = 0;
   let supporterCount = 0;
 
   try {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
     let page;
     do {
       const result = await stripe.checkout.sessions.search({

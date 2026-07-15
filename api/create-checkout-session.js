@@ -26,10 +26,10 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
   const origin = req.headers.origin || `https://${req.headers.host}`;
 
   try {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       locale: 'ja',
