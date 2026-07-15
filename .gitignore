@@ -1,4 +1,7 @@
 .vercel
 .DS_Store
+node_modules
+.env
+.env.local
 # 旧チャット運用の作業版バックアップ（git履歴が正になるため追跡しない）
 mitsuboshi-art-hoshida-demo.html
