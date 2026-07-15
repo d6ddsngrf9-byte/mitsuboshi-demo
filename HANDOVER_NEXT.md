@@ -1,3 +1,17 @@
+# 2026-07-15 Stripe決済(テストモード)組み込み — 残タスクは前田さん作業
+コードは実装・デプロイ済み。**ユーザー本人がStripe/Vercelダッシュボードで行う必要がある残タスク**（APIキー等の機密情報はClaudeが代理入力しない方針のため）:
+1. **Vercelに環境変数を設定**: プロジェクト設定 → Environment Variables に `STRIPE_SECRET_KEY`（Stripeテストモードのシークレットキー sk_test_...）を追加。追加後は再デプロイが必要（`vercel deploy --prod --yes`）。
+2. **Webhookエンドポイント登録**: Stripeダッシュボード → 開発者 → Webhook → エンドポイント追加 `https://atelier-shiroito.art/api/webhook`、イベントは `checkout.session.completed`。作成後に表示される signing secret (`whsec_...`) を Vercel環境変数 `STRIPE_WEBHOOK_SECRET` に設定。
+3. **（任意）コンビニ決済・銀行振込を有効化**: Stripeダッシュボード → 設定 → 支払い方法 で「コンビニ払い」「銀行振込（日本）」を有効化。コード側は `payment_method_types` を指定していないため、ここで有効にした分だけCheckoutに自動で表示される（コード変更不要）。
+4. 上記が済んだらテストカード（4242 4242 4242 4242 等）で決済フローを一通り確認 → 問題なければ本番用シークレットキーに差し替えてライブ化。
+
+**実装済みの内容**（このセッションで完了）:
+- `api/create-checkout-session.js`: 9コース（`c1`〜`c11`、crowdfunding/index.htmlの `.course-body` と対応）の金額・名称をサーバー側で固定管理し、Stripe Checkout Sessionを作成するVercel Function。金額はクライアントから受け取らず、tierキーのみ受け取ってサーバー側の表で引く方式（改ざん防止）。
+- `api/webhook.js`: `checkout.session.completed` を署名検証つきで受信するスケルトン。現状はログ出力のみ。**支援者数・集計金額のUI反映は未実装**（現状のゲージ0%/0円は静的な仮値のまま）。将来やるならデータストア（Vercel KV等）が必要。
+- `crowdfunding/index.html`: 9つの「支援する」ボタンに `data-tier` を付与し、クリックで `/api/create-checkout-session` にPOST→返ってきた `url` へ遷移。失敗時は既存のtoast機構でエラーメッセージを表示しボタンを復帰。決済キャンセル時は `?canceled=1` で戻ってきてトースト表示。ヒーロー/フッターの「このプロジェクトを支援する」の2ボタンは今回のスコープ外で従来通り `data-demo`（トースト表示のみ、Stripeには繋がない）。
+- `crowdfunding/thanks.html`: 決済完了後のサンクスページを新設（サイトのトーン・フォントに合わせたデザイン）。
+- `package.json`/`package-lock.json`: `stripe` SDK追加。ローカルに `node_modules` は生成せずコミット（.gitignoreに追加済み）。
+
 # 2026-07-13 更新
 - **回遊マップカード**: 背景に実際のGoogleマップ埋め込み（星田駅 34.7675,135.6639 中心・z16・`output=embed`のキー不要方式）。iframeはCSSフィルターで青トーン化＋`.map-scrim`ラジアル＋`.map-inner`テキストシャドウ。**装飾用**（pointer-events:none・lazy・aria-hidden）なのでカード上のスクロール/CTAは従来通り。トーン調整はフィルターとスクリムのrgba値で（スクリム合計が濃すぎると地図が消える。中心.56/縁.33が現値）。
 - **協力店グリッド**: 削除5（司法書士大侑/星田ネオ書房/甜甜/セカンドたなかや/飯田寝装店）・追加7（ShiroiTo SOCO/牧野さん家/BOさん(自転車修理)/チッタさん(カフェバー)/はなまる介護星田/ほっこりアットホーム/星田会館）。追加7件は**写真未手配→白タイル＋金星のテキストプレースホルダー**（`.shops-grid .ph`）。写真が届いたら `<div class="ph">…</div>` を `<img src="images/shops/xxx.jpg">` に差し替えるだけ。並びは五十音順。注記も「2026年版は確定し次第、順次更新」に変更（EN辞書も更新済み）。グリッドに `id="shopsgrid"` 追加。
