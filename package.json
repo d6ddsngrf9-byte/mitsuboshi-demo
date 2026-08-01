@@ -2,6 +2,10 @@
   "name": "mitsuboshi-demo",
   "private": true,
   "version": "1.0.0",
+  "scripts": {
+    "prepare": "sh scripts/install-hooks.sh",
+    "deploy": "sh scripts/deploy.sh"
+  },
   "dependencies": {
     "stripe": "^22.0.0"
   }

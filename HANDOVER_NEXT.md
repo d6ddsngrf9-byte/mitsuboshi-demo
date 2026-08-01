@@ -1,3 +1,18 @@
+# ⚠️ 2026-08-01 origin一本化（必読・最優先ルール）
+
+**7/25〜8/1、mini機側のセッションが古い状態(7/13時点)から作業してそのまま本番デプロイし、その後に積まれていた約10コミット分の作業（協力店写真8件・代表メッセージのアバター・見出し変更など）が本番ごと巻き戻る事故が発生。** 幸いGitHubへのpush自体は成功していたため、origin基準に立て直し、mini側の正当な追加分（トナリエ写真・サンライト削除・メンバーの声・ジャズバンド枠）をcherry-pickして復旧・統合済み。
+
+**再発防止のため、以降は以下を必ず守ること（mini機で作業するセッションも含む）：**
+
+1. **GitHub（`origin`）だけを正本として扱う。`mini`リモートには通常pushしない。**
+2. 作業開始前は必ず `git pull origin main`（`mini`からはpullしない）
+3. 作業後は必ず `git push origin main`
+4. **本番デプロイは `vercel deploy --prod --yes` を直接叩かず、必ず `npm run deploy` を使う。** これは `scripts/deploy.sh` の安全チェック（①作業ツリーがクリーンか ②ローカルHEADが`origin/main`と完全一致しているか）を通ってからでないとデプロイが実行されない仕組み。ズレていれば具体的なエラーで止まる。
+5. `npm install` すると `scripts/install-hooks.sh` が自動で走り、`origin`以外へのpushを拒否する`pre-push`フックが入る（`git push mini ...`は原則ブロックされる。緊急時のみ`ALLOW_NON_ORIGIN_PUSH=1`で明示的に解除可）。**mini機でも一度`npm install`しておくこと。**
+6. `mini`リモート自体は（過去の運用の名残として）残っているが、**新規セッションはこれを使わない**という前提で進める。
+
+---
+
 # 2026-07-15 Stripe決済(テストモード)組み込み — 残タスクは前田さん作業
 コードは実装・デプロイ済み。**ユーザー本人がStripe/Vercelダッシュボードで行う必要がある残タスク**（APIキー等の機密情報はClaudeが代理入力しない方針のため）:
 1. **Vercelに環境変数を設定**: プロジェクト設定 → Environment Variables に `STRIPE_SECRET_KEY`（Stripeテストモードのシークレットキー sk_test_...）を追加。追加後は再デプロイが必要（`vercel deploy --prod --yes`）。
