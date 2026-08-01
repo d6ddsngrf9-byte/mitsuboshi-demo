@@ -311,7 +311,19 @@
   .br-sp{display:none;}
   .shops-grid figcaption{font-size:12.5px;color:var(--muted);margin-top:8px;text-align:center;line-height:1.5;}
 
+  /* musician frame */
+  .musician{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:28px;align-items:center;margin-top:38px;
+    background:#fff;border:1px solid var(--hair);border-radius:18px;padding:26px;}
+  .musician .ph{width:100%;aspect-ratio:4/3;border-radius:12px;border:1px dashed var(--hair-blue);background:var(--blue-soft);
+    display:flex;align-items:center;justify-content:center;}
+  .musician .ph span{font-size:12px;color:var(--muted);letter-spacing:.08em;}
+  .musician img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;}
+  .musician h3{font-size:20px;margin:0 0 2px;color:var(--ink);}
+  .musician .romaji{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;}
+  .musician p.bio{font-size:14.5px;color:var(--ink);margin:0;}
+
   @media(max-width:820px){
+    .musician{grid-template-columns:1fr;gap:18px;padding:20px;}
     .hero-grid{grid-template-columns:1fr;gap:34px;}
     .triad{grid-template-columns:1fr;gap:34px;}
     .event-grid{grid-template-columns:1fr;}
@@ -591,33 +603,33 @@
   </div>
 </section>
 
+<!-- MUSICIANS -->
+<section class="sec dawn">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="musician-eyebrow">出演ミュージシャン</span>
+    <h2 data-i18n="musician-h2">まちに、音楽が流れる。</h2>
+    <p class="lead-p muted" data-i18n="musician-p">最終日の11月29日（日）、まちに音楽が響きます。星田会館でのライブと、演奏しながらまちを練り歩くパレード。銀河になったまちを、音楽がめぐります。</p>
+
+    <div class="musician">
+      <div class="ph"><span data-i18n="musician-ph">写真は準備中です</span></div>
+      <div>
+        <h3 data-i18n="musician-name">Clap Stomp Swingin&rsquo;</h3>
+        <p class="romaji">CLAP STOMP SWINGIN&rsquo;</p>
+        <p class="bio" data-i18n="musician-bio">1920〜40年代のスウィングジャズを軸に、関西を拠点に活動するバンド。生音のアンサンブルで、聴く人の体が自然に動きだすステージを届けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MEMBER VOICES -->
 <section class="sec sky">
   <div class="wrap reveal">
     <span class="eyebrow dark" data-i18n="voices-eyebrow">メンバーの声</span>
     <h2 data-i18n="voices-h2">つくる人たちの言葉。</h2>
     <p class="lead-p" style="color:rgba(255,255,255,.9);" data-i18n="voices-p">アトリエShiroiToで制作するメンバーの声です。<br>本人・ご家族の同意のもと、作家名で掲載しています。</p>
-    <p class="demonote" style="color:rgba(255,255,255,.6);margin-top:6px;" data-i18n="voices-note">※名前・メッセージ・写真はすべて仮置きです。同意取得済みの方のみ、実際の内容に差し替えます。</p>
 
     <div class="voices-grid">
 
-      <!-- 写真あり -->
-      <div class="voice-card">
-        <div class="voice-avatar has-photo" aria-label="作家写真（仮）">
-          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="40" cy="40" r="40" fill="#CFE8F3"/>
-            <circle cx="40" cy="32" r="13" fill="#9FCBDD"/>
-            <ellipse cx="40" cy="62" rx="20" ry="13" fill="#9FCBDD"/>
-          </svg>
-          <span class="photo-label" data-i18n="photo-placeholder">写真</span>
-        </div>
-        <div class="voice-body">
-          <blockquote class="voice-quote" data-i18n="v-msg1">「絵を描いていると、頭の中がすっきりします。毎日ここに来るのが楽しい。」</blockquote>
-          <p class="voice-name" data-i18n="v-name1">〇〇（作家名）</p>
-        </div>
-      </div>
-
-      <!-- 写真なし -->
       <div class="voice-card">
         <div class="voice-avatar no-photo" aria-label="写真なし">
           <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -626,12 +638,11 @@
           </svg>
         </div>
         <div class="voice-body">
-          <blockquote class="voice-quote" data-i18n="v-msg2">「自分の色が好きです。展覧会で誰かが立ち止まってくれると嬉しいです。」</blockquote>
-          <p class="voice-name" data-i18n="v-name2">〇〇（作家名）</p>
+          <blockquote class="voice-quote" data-i18n="v-msg1">「小原さんが立ち上げてくれなかったら、ぼくはシロイト知らない人で、相談とかすることもなく、どうしてたでしょうか？　泣いてばっかで苦しんでたと思います。出会ってくれて感謝なのです。ありがたく思っています。」</blockquote>
+          <p class="voice-name" data-i18n="v-name1">魔可多宮ナツ</p>
         </div>
       </div>
 
-      <!-- ご家族 -->
       <div class="voice-card">
         <div class="voice-avatar no-photo" aria-label="写真なし">
           <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -640,24 +651,47 @@
           </svg>
         </div>
         <div class="voice-body">
-          <blockquote class="voice-quote" data-i18n="v-msg3">「ShiroiToに通うようになって、この子の表情が変わりました。まちの人に作品を見てもらえることが、本当に嬉しいです。」</blockquote>
-          <p class="voice-name" data-i18n="v-name3">〇〇さんのご家族</p>
+          <blockquote class="voice-quote" data-i18n="v-msg2">「本人、家族にとってなくてはならない場所です。とても喜んで行けています。いつもありがとうございます。」</blockquote>
+          <p class="voice-name" data-i18n="v-name2">K.F様（ShiroiTo所属作家ご家族）</p>
         </div>
       </div>
 
-      <!-- 写真あり -->
       <div class="voice-card">
-        <div class="voice-avatar has-photo" aria-label="作家写真（仮）">
+        <div class="voice-avatar no-photo" aria-label="写真なし">
           <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="40" cy="40" r="40" fill="#CFE8F3"/>
-            <circle cx="40" cy="32" r="13" fill="#9FCBDD"/>
-            <ellipse cx="40" cy="62" rx="20" ry="13" fill="#9FCBDD"/>
+            <circle cx="40" cy="40" r="40" fill="#1F6885"/>
+            <text x="40" y="52" font-size="36" text-anchor="middle" fill="#E0A93A">✦</text>
           </svg>
-          <span class="photo-label" data-i18n="photo-placeholder">写真</span>
         </div>
         <div class="voice-body">
-          <blockquote class="voice-quote" data-i18n="v-msg4">「今回は星をテーマにつくります。うまくできるか分からないけど、やってみます。」</blockquote>
-          <p class="voice-name" data-i18n="v-name4">〇〇（作家名）</p>
+          <blockquote class="voice-quote" data-i18n="v-msg3">「みつぼしアートでほしのうた保育園の絵を完成させるぞ！おー！」</blockquote>
+          <p class="voice-name" data-i18n="v-name3">MAKOTO TANAKA</p>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-avatar no-photo" aria-label="写真なし">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="40" cy="40" r="40" fill="#1F6885"/>
+            <text x="40" y="52" font-size="36" text-anchor="middle" fill="#E0A93A">✦</text>
+          </svg>
+        </div>
+        <div class="voice-body">
+          <blockquote class="voice-quote" data-i18n="v-msg4">「シロイトは家族的な所で長く居たいです。」</blockquote>
+          <p class="voice-name" data-i18n="v-name4">ERINA</p>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-avatar no-photo" aria-label="写真なし">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="40" cy="40" r="40" fill="#1F6885"/>
+            <text x="40" y="52" font-size="36" text-anchor="middle" fill="#E0A93A">✦</text>
+          </svg>
+        </div>
+        <div class="voice-body">
+          <blockquote class="voice-quote" data-i18n="v-msg5">「部屋の感じはきれいに整っています。画材がきれいに整理整頓されています。」</blockquote>
+          <p class="voice-name" data-i18n="v-name5">Mamoru</p>
         </div>
       </div>
 
@@ -1006,16 +1040,23 @@
     'voices-eyebrow': { ja: 'メンバーの声', en: 'Voices from the Atelier' },
     'voices-h2': { ja: 'つくる人たちの言葉。', en: 'Words from those who create.' },
     'voices-p': { ja: 'アトリエShiroiToで制作するメンバーの声です。<br>本人・ご家族の同意のもと、作家名で掲載しています。', en: 'Words from members who create at Atelier ShiroiTo,<br>shared with consent of each person and their family, using their artist names.' },
-    'voices-note': { ja: '※名前・メッセージ・写真はすべて仮置きです。同意取得済みの方のみ、実際の内容に差し替えます。', en: 'Names, messages, and photos shown here are all placeholders. Only those with confirmed consent will appear in the final version.' },
     'photo-placeholder': { ja: '写真', en: 'Photo' },
-    'v-msg1': { ja: '「絵を描いていると、頭の中がすっきりします。毎日ここに来るのが楽しい。」', en: '"When I draw, my mind feels clear. I look forward to coming here every day."' },
-    'v-name1': { ja: '〇〇（作家名）', en: '[Artist Name]' },
-    'v-msg2': { ja: '「自分の色が好きです。展覧会で誰かが立ち止まってくれると嬉しいです。」', en: '"I love my own colors. It makes me happy when someone stops to look at my work in the exhibition."' },
-    'v-name2': { ja: '〇〇（作家名）', en: '[Artist Name]' },
-    'v-msg3': { ja: '「ShiroiToに通うようになって、この子の表情が変わりました。まちの人に作品を見てもらえることが、本当に嬉しいです。」', en: '"Since coming to ShiroiTo, the expression on my child\u2019s face has changed. It makes us truly happy to know that people in the town are seeing their work."' },
-    'v-name3': { ja: '〇〇さんのご家族', en: 'Family of [Artist Name]' },
-    'v-msg4': { ja: '「今回は星をテーマにつくります。うまくできるか分からないけど、やってみます。」', en: '"This time I am making something with stars as the theme. I am not sure how it will turn out, but I am going to try."' },
-    'v-name4': { ja: '〇〇（作家名）', en: '[Artist Name]' },
+    'v-msg1': { ja: '「小原さんが立ち上げてくれなかったら、ぼくはシロイト知らない人で、相談とかすることもなく、どうしてたでしょうか？　泣いてばっかで苦しんでたと思います。出会ってくれて感謝なのです。ありがたく思っています。」', en: '"If Ohara-san hadn\u2019t started this place, I would never have known ShiroiTo, and I\u2019d have had no one to talk to. What would I have done? I think I\u2019d have just kept crying and hurting. I\u2019m grateful we met. I feel truly thankful."' },
+    'v-name1': { ja: '魔可多宮ナツ', en: 'Natsu Makatamiya' },
+    'v-msg2': { ja: '「本人、家族にとってなくてはならない場所です。とても喜んで行けています。いつもありがとうございます。」', en: '"For our family, and for him, it is an essential place. He goes there so happily. Thank you always."' },
+    'v-name2': { ja: 'K.F様（ShiroiTo所属作家ご家族）', en: 'K.F. (family of a ShiroiTo artist)' },
+    'v-msg3': { ja: '「みつぼしアートでほしのうた保育園の絵を完成させるぞ！おー！」', en: '"I\u2019m going to finish the Hoshinouta Nursery painting at Mitsuboshi ART \u2014 let\u2019s go!"' },
+    'v-name3': { ja: 'MAKOTO TANAKA', en: 'MAKOTO TANAKA' },
+    'v-msg4': { ja: '「シロイトは家族的な所で長く居たいです。」', en: '"ShiroiTo feels like family. I want to stay here a long time."' },
+    'v-name4': { ja: 'ERINA', en: 'ERINA' },
+    'v-name5': { ja: 'Mamoru', en: 'Mamoru' },
+    'musician-eyebrow': { ja: '出演ミュージシャン', en: 'Featured Musicians' },
+    'musician-h2': { ja: 'まちに、音楽が流れる。', en: 'Music runs through the town.' },
+    'musician-p': { ja: '最終日の11月29日（日）、まちに音楽が響きます。星田会館でのライブと、演奏しながらまちを練り歩くパレード。銀河になったまちを、音楽がめぐります。', en: 'On the final day, Sunday, November 29, music fills the town \u2014 a live show at Hoshida Kaikan, followed by a parade winding through the streets. Music travels the town that has become a galaxy.' },
+    'musician-ph': { ja: '写真は準備中です', en: 'Photo coming soon' },
+    'musician-name': { ja: 'Clap Stomp Swingin\u2019', en: 'Clap Stomp Swingin\u2019' },
+    'musician-bio': { ja: '1920〜40年代のスウィングジャズを軸に、関西を拠点に活動するバンド。生音のアンサンブルで、聴く人の体が自然に動きだすステージを届けます。', en: 'A Kansai-based band playing swing jazz from the 1920s\u201340s. Their all-acoustic ensemble delivers a set that gets listeners moving before they notice.' },
+    'v-msg5': { ja: '「部屋の感じはきれいに整っています。画材がきれいに整理整頓されています。」', en: '"The room is kept beautifully. The art materials are all neatly organized."' },
 
     'pv-h3': { ja: '会場となる店舗・民家・会館', en: 'Venues: shops, homes, and halls' },
     'pv-p': { ja: '星田駅前ロータリー、商店、民家、星田会館……まちの場所が、展示のステージになります。', en: 'The station rotary, shops, private homes, and Hoshida Kaikan\u2014 the town itself becomes the stage.' },
