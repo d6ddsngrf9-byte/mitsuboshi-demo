@@ -147,12 +147,13 @@
   .use-bar span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width 1.3s cubic-bezier(.22,1,.36,1);}
 
   .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:42px;}
-  .course{background:#fff;border:1px solid var(--hair);border-radius:16px;padding:0;overflow:hidden;
+  .course{background:#fff;border:1px solid var(--hair);border-radius:16px;padding:0;overflow:hidden;max-width:420px;
     display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;}
   .course:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(31,104,133,.12);border-color:var(--gold);}
-  .course-thumb{height:128px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(160deg,#E3F0F6,#F6FBFD);border-bottom:1px solid var(--hair);}
-  .course-thumb svg{height:84px;width:auto;}
+  .course-thumb{aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,#E3F0F6,#F6FBFD);border-bottom:1px solid var(--hair);overflow:hidden;}
+  .course-thumb svg{height:64px;width:auto;}
+  .course-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
   .course-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
   .course .ttl{font-size:13px;letter-spacing:.08em;color:var(--muted);font-weight:700;}
   .course .price{font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-weight:700;font-size:30px;color:var(--ink);line-height:1;}
@@ -475,7 +476,7 @@
         <div class="course-body"><span class="ttl" data-i18n="c1-ttl">みつぼし応援団</span><span class="price">3,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c1-ret">リターンはありません。金額にかかわらず、あなたの応援が、まちを照らす一つの光になります。</span><button data-tier="c1" data-i18n="cta-small">支援する</button></div>
       </div>
       <div class="course">
-        <div class="course-thumb"><svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><circle cx="78" cy="60" r="28" fill="#fff" stroke="#3F93B8" stroke-width="2.5"/><circle cx="78" cy="60" r="20" fill="#EAF4F9"/><text x="78" y="67" font-size="20" text-anchor="middle" fill="#E0A93A">✦</text><rect x="116" y="38" width="52" height="36" rx="4" fill="#fff" stroke="#E0A93A" stroke-width="2"/><line x1="122" y1="52" x2="162" y2="52" stroke="#9FCBDD" stroke-width="2"/><line x1="122" y1="62" x2="154" y2="62" stroke="#cfe0e8" stroke-width="2"/></svg></div>
+        <div class="course-thumb"><img src="images/rewards/badge.jpg" alt="オリジナル缶バッジ＆ポストカード" loading="lazy"></div>
         <div class="course-body"><span class="ttl" data-i18n="c2-ttl">オリジナル缶バッジ＆ポストカード</span><span class="price">3,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c2-ret">会場にてお受け取りください。</span><button data-tier="c2" data-i18n="cta-small">支援する</button></div>
       </div>
     </div>
@@ -495,7 +496,7 @@
     <div class="tier-label"><span class="tier-price">8,000<small>円</small></span></div>
     <div class="courses">
       <div class="course">
-        <div class="course-thumb"><svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><path d="M100 38 C84 30 64 30 52 36 L52 86 C64 80 84 80 100 88 Z" fill="#fff" stroke="#3F93B8" stroke-width="2.5"/><path d="M100 38 C116 30 136 30 148 36 L148 86 C136 80 116 80 100 88 Z" fill="#fff" stroke="#E0A93A" stroke-width="2.5"/><line x1="100" y1="40" x2="100" y2="88" stroke="#9FCBDD" stroke-width="2"/><line x1="62" y1="50" x2="92" y2="52" stroke="#cfe0e8" stroke-width="2"/><line x1="62" y1="62" x2="92" y2="64" stroke="#cfe0e8" stroke-width="2"/><line x1="108" y1="52" x2="138" y2="50" stroke="#f0dcae" stroke-width="2"/><line x1="108" y1="64" x2="138" y2="62" stroke="#f0dcae" stroke-width="2"/></svg></div>
+        <div class="course-thumb"><img src="images/rewards/booklet.jpg" alt="会期の作品集" loading="lazy"></div>
         <div class="course-body"><span class="ttl" data-i18n="c12-ttl">会期の作品集をお届け</span><span class="price">8,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c12-ret">会期の記録をまとめた作品集を郵送でお届けします。</span><button data-tier="c12" data-i18n="cta-small">支援する</button></div>
       </div>
     </div>
@@ -507,7 +508,7 @@
         <div class="course-body"><span class="ttl" data-i18n="c7-ttl">みつぼし応援団</span><span class="price">10,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c7-ret">リターンはありません。金額にかかわらず、あなたの応援が、まちを照らす一つの光になります。</span><button data-tier="c7" data-i18n="cta-small">支援する</button></div>
       </div>
       <div class="course">
-        <div class="course-thumb"><svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><path d="M68 36 L52 52 L66 58 L66 88 L134 88 L134 58 L148 52 L132 36 L118 46 Q100 52 82 46 Z" fill="#fff" stroke="#3F93B8" stroke-width="2.5"/><text x="100" y="76" font-size="20" text-anchor="middle" fill="#E0A93A">✦</text></svg></div>
+        <div class="course-thumb"><img src="images/rewards/tshirt.jpg" alt="オリジナルTシャツ" loading="lazy"></div>
         <div class="course-body"><span class="ttl" data-i18n="c9-ttl">オリジナル Tシャツ</span><span class="price">10,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c9-ret">みつぼしART星田2026オリジナルTシャツを会場にてお受け取りください。</span><button data-tier="c9" data-i18n="cta-small">支援する</button></div>
       </div>
     </div>
@@ -515,7 +516,7 @@
     <div class="tier-label"><span class="tier-price">15,000<small>円</small> / 30,000<small>円</small></span></div>
     <div class="courses">
       <div class="course">
-        <div class="course-thumb"><svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="52" r="28" fill="#EAF4F9" stroke="#3F93B8" stroke-width="2.5"/><circle cx="91" cy="48" r="3" fill="#3F93B8"/><circle cx="109" cy="48" r="3" fill="#3F93B8"/><path d="M90 62 Q100 70 110 62" fill="none" stroke="#3F93B8" stroke-width="2" stroke-linecap="round"/><circle cx="100" cy="52" r="28" fill="none" stroke="#E0A93A" stroke-width="1.5" stroke-dasharray="5 4"/></svg></div>
+        <div class="course-thumb"><img src="images/rewards/portrait.jpg" alt="ShiroiTo所属作家による似顔絵" loading="lazy"></div>
         <div class="course-body"><span class="ttl" data-i18n="c10-ttl">ShiroiTo所属作家による似顔絵</span><span class="price">15,000<small data-i18n="yen-label2">円</small></span><span class="ret" data-i18n="c10-ret">ShiroiTo所属作家があなたの似顔絵を制作してお届けします。</span><button data-tier="c10" data-i18n="cta-small">支援する</button></div>
       </div>
       <div class="course">
