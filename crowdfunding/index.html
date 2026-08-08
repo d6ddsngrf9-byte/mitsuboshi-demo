@@ -254,7 +254,10 @@
   .people-num{font-family:"kinuta-maruminkatura-stdn","Zen Maru Gothic","Hiragino Maru Gothic ProN",serif;font-size:32px;font-weight:700;color:var(--gold);
     flex:none;width:48px;line-height:1.2;padding-top:2px;}
   .people-content h3{font-size:17px;font-weight:700;margin:0 0 .4em;color:var(--ink);}
-  .people-content p{font-size:13.5px;color:var(--muted);margin:0;}
+  .people-content p{font-size:13.5px;color:var(--muted);margin:0;
+    /* 文節単位で改行（「アトリエ|ShiroiTo」「バン|ド」等の語中改行を防ぐ）。未対応ブラウザは従来動作 */
+    word-break:auto-phrase;}
+  .nw{white-space:nowrap;}
 
   .pay-simple{display:grid;gap:12px;margin-top:32px;}
   .pay-row{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--hair);
@@ -547,29 +550,29 @@
       <div class="people-row">
         <div class="people-num">01</div>
         <div class="people-content">
-          <h3 data-i18n="p1-h3">アトリエShiroiTo メンバー・スタッフ</h3>
-          <p data-i18n="p1-p">ShiroiTo所属作家（約22名）と、日々寄り添うスタッフたち。</p>
+          <h3 data-i18n="p1-h3">アトリエShiroiTo メンバー</h3>
+          <p data-i18n="p1-p">芸術祭を統括する代表理事・画家の小原緑をはじめ、個性豊かな作品を生み出すアトリエShiroiTo所属作家たち、日々、所属作家に寄り添い、創作活動を支えるスタッフたち。ともに芸術祭をつくり上げます。</p>
         </div>
       </div>
       <div class="people-row">
         <div class="people-num">02</div>
         <div class="people-content">
-          <h3 data-i18n="p3-h3">招待作家＋ミュージシャン</h3>
-          <p data-i18n="p3-p">外部から参加する7名の招待作家とJAZZバンド。異なる表現や感覚を持つ人たちが、一緒に会場を作り上げます。</p>
+          <h3 data-i18n="p3-h3">招待作家・ミュージシャン</h3>
+          <p data-i18n="p3-p">外部から参加する7名の招待作家とJAZZバンド。異なる表現や感覚を持つ<span class="nw">人たちが</span>、ともに会場を盛り上げます。</p>
         </div>
       </div>
       <div class="people-row">
         <div class="people-num">03</div>
         <div class="people-content">
-          <h3 data-i18n="pv-h3">会場となる店舗・民家・会館</h3>
-          <p data-i18n="pv-p">星田駅前ロータリー、商店、民家、星田会館……まちの場所が、展示のステージになります。</p>
+          <h3 data-i18n="pv-h3">地域の皆さま</h3>
+          <p data-i18n="pv-p">会場を提供してくださる商店や施設、地域の方々やボランティア、皆さまのご協力によって芸術祭は成り立っています。</p>
         </div>
       </div>
       <div class="people-row">
         <div class="people-num">04</div>
         <div class="people-content">
           <h3 data-i18n="p4-h3">アートディレクション</h3>
-          <p data-i18n="p4-p"><a class="tlink" href="https://taido.design/" target="_blank" rel="noopener">taido.design</a>（前田敏幸）｜立ち上げ当初からShiroiToに伴走。第2回でリニューアルしたロゴをはじめ、ブランド・印刷物・回遊設計を担当。</p>
+          <p data-i18n="p4-p"><a class="tlink" href="https://taido.design/" target="_blank" rel="noopener">taido.design</a>（前田敏幸）｜立ち上げ当初からアトリエShiroiToに伴走。第2回でリニューアルしたロゴをはじめ、ブランド・印刷物・回遊設計を担当しています。</p>
         </div>
       </div>
     </div>
@@ -972,16 +975,14 @@
 
     'people-eyebrow': { ja: 'つくる人たち', en: 'The people behind it' },
     'people-h2': { ja: '立場をこえて、ともに。', en: 'Together, beyond any single role.' },
-    'p1-h3': { ja: 'アトリエShiroiTo メンバー・スタッフ', en: 'Atelier ShiroiTo Members and Staff' },
-    'p1-p': { ja: 'ShiroiTo所属作家（約22名）と、日々寄り添うスタッフたち。', en: 'Around 22 affiliated ShiroiTo artists, and the staff who stay close to them every day.' },
-    'p2-h3': { ja: '招待作家', en: 'Invited Artists' },
-    'p2-p': { ja: '外部から参加する7名の招待作家。異なる表現や感覚を持つ人たちが一緒に手を動かします。', en: 'Seven invited artists from outside the studio, bringing different forms of expression and sensibility as they create alongside the members.' },
-    'p3-h3': { ja: '招待作家＋ミュージシャン', en: 'Invited Artists + Musicians' },
-    'p3-p': { ja: '外部から参加する7名の招待作家とJAZZバンド。異なる表現や感覚を持つ人たちが、一緒に会場を作り上げます。', en: 'Seven invited artists and a jazz band joining from outside the studio. People with different forms of expression and sensibility come together to build the venue.' },
-    'pv-h3': { ja: '会場となる店舗・民家・会館', en: 'Venues: shops, homes, and halls' },
-    'pv-p': { ja: '星田駅前ロータリー、商店、民家、星田会館……まちの場所が、展示のステージになります。', en: 'The rotary in front of the station, local shops, private homes, and Hoshida Kaikan all become part of the stage.' },
+    'p1-h3': { ja: 'アトリエShiroiTo メンバー', en: 'Atelier ShiroiTo Members' },
+    'p1-p': { ja: '芸術祭を統括する代表理事・画家の小原緑をはじめ、個性豊かな作品を生み出すアトリエShiroiTo所属作家たち、日々、所属作家に寄り添い、創作活動を支えるスタッフたち。ともに芸術祭をつくり上げます。', en: 'Led by representative director and painter Midori Ohara, who oversees the festival, together with the ShiroiTo artists who make such distinctive work and the staff who stay close to them and support their practice day after day. We build the festival together.' },
+    'p3-h3': { ja: '招待作家・ミュージシャン', en: 'Invited Artists and Musicians' },
+    'p3-p': { ja: '外部から参加する7名の招待作家とJAZZバンド。異なる表現や感覚を持つ<span class="nw">人たちが</span>、ともに会場を盛り上げます。', en: 'Seven invited artists and a jazz band joining from outside the studio. People with different forms of expression and sensibility bring the venues to life together.' },
+    'pv-h3': { ja: '地域の皆さま', en: 'The Local Community' },
+    'pv-p': { ja: '会場を提供してくださる商店や施設、地域の方々やボランティア、皆さまのご協力によって芸術祭は成り立っています。', en: 'The shops and facilities that offer their spaces as venues, local residents, and volunteers. The festival exists thanks to all of their cooperation.' },
     'p4-h3': { ja: 'アートディレクション', en: 'Art Direction' },
-    'p4-p': { ja: 'taido.design（前田敏幸）｜立ち上げ当初からShiroiToに伴走。第2回でリニューアルしたロゴをはじめ、ブランド・印刷物・回遊設計を担当。', en: '<a class="tlink" href="https://taido.design/" target="_blank" rel="noopener">taido.design</a> (Toshiyuki Maeda): with ShiroiTo since the very beginning. Designed the logo renewed for the 2nd edition, and handles branding, print, and visitor-flow design.' },
+    'p4-p': { ja: 'taido.design（前田敏幸）｜立ち上げ当初からアトリエShiroiToに伴走。第2回でリニューアルしたロゴをはじめ、ブランド・印刷物・回遊設計を担当しています。', en: '<a class="tlink" href="https://taido.design/" target="_blank" rel="noopener">taido.design</a> (Toshiyuki Maeda): with ShiroiTo since the very beginning. Designed the logo renewed for the 2nd edition, and handles branding, print, and visitor-flow design.' },
     'artists-eyebrow': { ja: '招待作家', en: 'Invited Artists' },
     'artists-h2': { ja: 'まちに、表現が集まる。', en: 'Expression gathers in the town.' },
     'artists-p': { ja: '外部からこの芸術祭に参加する招待作家のみなさん（五十音順）。', en: 'The invited artists joining this festival from outside the studio (in Japanese syllabary order).' },
@@ -1085,8 +1086,8 @@
     'musician-bio': { ja: '1920〜40年代のスウィングジャズを軸に、関西を拠点に活動するバンド。生音のアンサンブルで、聴く人の体が自然に動きだすステージを届けます。', en: 'A Kansai-based band playing swing jazz from the 1920s\u201340s. Their all-acoustic ensemble delivers a set that gets listeners moving before they notice.' },
     'v-msg5': { ja: '「部屋の感じはきれいに整っています。画材がきれいに整理整頓されています。」', en: '"The room is kept beautifully. The art materials are all neatly organized."' },
 
-    'pv-h3': { ja: '会場となる店舗・民家・会館', en: 'Venues: shops, homes, and halls' },
-    'pv-p': { ja: '星田駅前ロータリー、商店、民家、星田会館……まちの場所が、展示のステージになります。', en: 'The rotary in front of the station, local shops, private homes, and Hoshida Kaikan all become part of the stage.' },
+    'pv-h3': { ja: '地域の皆さま', en: 'The Local Community' },
+    'pv-p': { ja: '会場を提供してくださる商店や施設、地域の方々やボランティア、皆さまのご協力によって芸術祭は成り立っています。', en: 'The shops and facilities that offer their spaces as venues, local residents, and volunteers. The festival exists thanks to all of their cooperation.' },
     'c10-ttl': { ja: 'ShiroiTo所属作家による似顔絵', en: 'Portrait by an Affiliated Artist' },
     'c10-ret': { ja: 'ShiroiTo所属作家があなたの似顔絵を1点制作してお届けします。', en: 'A ShiroiTo affiliated artist will draw one portrait of you and send it to you.' },
     'c11-ttl': { ja: 'みつぼし応援団', en: 'Mitsuboshi Supporter' },
